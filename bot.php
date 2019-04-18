@@ -59,6 +59,14 @@
         $arrayPostData['messages'][0]['type'] = "text";
         $arrayPostData['messages'][0]['text'] = "ขอราคาค่าอาหารกลางวัน";
         replyMsg($arrayHeader,$arrayPostData);
+       
+        if($message == "100"){
+            $total = 100/4;
+            $arrayPostData['messages'][1]['type'] = "text";
+            $arrayPostData['messages'][1]['text'] = "$total";
+            replyMsg($arrayHeader,$arrayPostData);
+        }    
+        
     }    
 function replyMsg($arrayHeader,$arrayPostData){
         $strUrl = "https://api.line.me/v2/bot/message/reply";
